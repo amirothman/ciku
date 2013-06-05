@@ -1,0 +1,18 @@
+<div id="login" class="row">
+<div class="span12 well">
+<% if @element %>
+<h1>You are about to delete <strong><em><%= @element.title %></em></strong>. Are you sure?</h1><br><br>
+
+	<form action=<%= "/admin/element/#{@element.id}" %> method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input class="btn btn-danger" type="submit" value="Yes">
+		<a class="btn btn-inverse" href="/admin">Cancel</a>
+	</form>
+<% else %>
+	<p>Element not found.</p>
+<% end %>
+</div></div>
+
+ 
+
+

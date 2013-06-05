@@ -1,0 +1,18 @@
+<div id="content" class="row">
+<div class="span8 well">
+<% if @post %>
+	<h3>Post</h3>
+	<form action=<%= "/admin/blog/#{params[:bid]}/post/#{params[:id]}" %> method="post" id="edit">
+		<input type="hidden" name="_method" value="put">
+		Title:<br><input type="text" name="title" value=<%= @post.title %>><br>
+		Content:<br><textarea name="content"><%= @post.content %>
+		</textarea><br>
+		<input class="btn btn-inverse" type="submit" value="Save">
+	</form>
+
+	<a href=<%= "/admin/blog/#{params[:bid]}" %>><i class="icon-arrow-left"></i></a>
+<% else %>
+None
+<%end %>
+</div>
+</div>

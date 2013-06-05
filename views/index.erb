@@ -1,0 +1,56 @@
+        <header><h1>
+            <% if @elements.first %>
+            <%= @elements.first.code %><% end %></h1></header>
+            <div id="navigationbar">
+            <ul class="nav nav-pills">
+                <% if @sites %>
+                <% @sites.each do |a| %>
+              <li><a href="#" path= <%= "#{request.base_url}/site/#{a.id}" %> class="atas"><%= a.title %></a></li>
+              <% end %><% end %>
+
+              <% if @blogs %>
+              
+                <% @blogs.each do |b| %>
+                <li class="dropdown">
+
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <%= b.title %>
+                    <b class="caret"></b>
+                  </a>
+                <ul class="dropdown-menu">
+                  <% b.posts.each do |a| %>
+                <li><a href="#" class="justifymid" path= <%= "#{request.base_url}/blog/#{b.id}/post/#{a.id}" %>><%= a.title%> </a></li>
+                <% end %>
+                </ul>
+                </li>
+
+            
+
+                
+              <% end %><% end %>
+        
+            </div>
+
+            <div id="content" class="row-fluid">
+
+                <div id="left" class="span4 well">
+                <!--elements are placed here -->
+                <% if @elements %>
+                <% @elements.drop(1).each do |e| %>
+                <%= e.code %><br>
+                <% end %><% end %>
+                </div>
+                <!--divider-->
+                <div id="right" class="span6"> <% if @sites.first %>
+                <h3><%= @sites.first.title %></h3>
+
+                <p><%= @sites.first.content %><% end %></p></div>
+
+            </div>
+
+            <div id="footer">
+                <footer>
+                    <small>Studio Aras Tiga // Amir Othman 2013</small>
+                </footer>
+            </div>
+        

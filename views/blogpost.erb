@@ -1,0 +1,15 @@
+<div id="content" class="row">
+<div class="span8 well">
+
+	<h3>New Post</h3>
+
+	<form action=<%= "/admin/blog/#{params[:id]}/post" %> method="post">
+		Title:<br><input type="text" name="title"><br>
+		Content:<br><textarea name="content">
+		</textarea><br>
+		<input class="btn btn-inverse" type="submit" value="Save">
+	</form>
+
+	<a href=<%= "/admin/blog/#{params[:id]}" %>><i class="icon-arrow-left"></i></a>
+</div>
+</div>

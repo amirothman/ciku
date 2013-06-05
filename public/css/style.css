@@ -1,0 +1,43 @@
+#firstelement{
+	padding: 3px;
+}
+
+.justifymid{
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+}
+
+#left {
+
+	padding: 20px 20px 30px 20px;
+
+}
+
+#footer {
+
+	text-align: left;
+	padding: 0px 0px 0px 20px;
+}
+
+#navigationbar {
+
+	padding: 20px 0px 0px 0px;
+}
+
+#container {
+
+	margin: 20px 20px 0px 20px;
+
+}
+
+#login {
+
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+#mid {
+	text-align: center;
+}

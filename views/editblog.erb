@@ -1,0 +1,30 @@
+<div id="content" class="row">
+<div class="span8 well">
+<% if @blog %>
+	<h3>Blog</h3>
+
+	<form action=<%= "/admin/blog/#{@blog.id}" %> method="post" id="edit">
+		<input type="hidden" name="_method" value="put">
+		Title:<br><input type="text" name="title" value=<%= @blog.title %>><br>
+		<input class="btn btn-inverse" type="submit" value="Save">
+	</form>
+
+	<h4>Posts</h4>
+
+<table class="table table-hover">
+<% @blog.posts.each do |p| %>
+<tr>
+<td><a href=<%= "/admin/blog/#{@blog.id}/post/#{p.id}" %> ><%= p.title %> </a>
+<td><a href=<%= "/admin/blog/#{@blog.id}/post/#{p.id}/delete" %>><i class="icon-remove"></i></a>
+</td>
+</tr>
+<% end %>
+<td></td>
+<td><a class="icon-file" href=<%= "/admin/blog/#{@blog.id}/post" %>></a></td>
+</table>
+<a href="/admin"><i class="icon-arrow-left"></i></a>
+<% else %>
+None
+<% end %>
+</div>
+</div>

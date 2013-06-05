@@ -1,0 +1,8 @@
+- change from classic app to modular app
+- user/password model + registration/authentication
+
+
+concrete:
+
+delete pages (beautify!)
+captcha

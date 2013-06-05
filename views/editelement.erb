@@ -1,0 +1,19 @@
+<div id="content" class="row">
+<div class="span8 well">
+<% if @element %>
+	<h3>Element</h3>
+
+	<form action=<%= "/admin/element/#{@element.id}" %> method="post" id="edit">
+		<input type="hidden" name="_method" value="put">
+		Title:<br><input type="text" name="title" value=<%= @element.title %>><br>
+		Code:<br><textarea name="code"><%= @element.code %>
+		</textarea><br>
+		<input class="btn btn-inverse" type="submit" value="Save">
+	</form>
+
+	<a href="/admin"><i class="icon-arrow-left"></i></a>
+<% else %>
+None
+<%end %>
+</div>
+</div>
